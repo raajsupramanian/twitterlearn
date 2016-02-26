@@ -8,10 +8,12 @@ import unittest
 
 from mock import Mock, patch
 
-class UtilsTestCase(unittest.TestCase):
+class TweetTestCase(unittest.TestCase):
+    """
+    Simple Test Case to test followers_id
+    """
+    # TODO Lots of test case can be written but couldn't get time spent time on learning Twitter API
     def test_get_followers_id(self):
-        user = self.user = Mock()
-        user.email = 'user@example.com'
         with patch('twitter_stats.requests') as mock_requests:
             mock_requests.get.return_value = mock_response = Mock()
             mock_response.status_code = 200
